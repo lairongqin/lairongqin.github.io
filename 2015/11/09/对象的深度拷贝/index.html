@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="上一篇所说，基本类型和引用类型差别，在拷贝基本类型时，只需简单的浅层拷贝即值传递即可。
+深层拷贝数组的深层拷贝slice 方法数组的深层拷贝可以依靠 Slice()方法跟concat()等操作数组的方法来反回一个新的数组。
+对于array对象的slice函数，返回一个数组的一段。（仍为数组）
+arr">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Rongqin Lai">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="JS对象的深度拷贝"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Lai Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>JS对象的深度拷贝 - Lai Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Roylai</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/lairongqin">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>JS对象的深度拷贝</h1>
+                    
+                    <h2 class="post-subheading">
+                        上一篇所说，基本类型和引用类型差别，在拷贝基本类型时，只需简单的浅层拷贝即值传递即可。
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2015-11-09
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/JavaScript/">#JavaScript</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>上一篇所说，基本类型和引用类型差别，在拷贝基本类型时，只需简单的浅层拷贝即值传递即可。</p>
+<h1 id="深层拷贝"><a href="#深层拷贝" class="headerlink" title="深层拷贝"></a>深层拷贝</h1><h2 id="数组的深层拷贝"><a href="#数组的深层拷贝" class="headerlink" title="数组的深层拷贝"></a>数组的深层拷贝</h2><h3 id="slice-方法"><a href="#slice-方法" class="headerlink" title="slice 方法"></a>slice 方法</h3><p>数组的深层拷贝可以依靠 Slice()方法跟concat()等操作数组的方法来反回一个新的数组。</p>
+<p>对于array对象的slice函数，<br>返回一个数组的一段。（仍为数组）</p>
+<pre><code>arrayObj.slice(start, [end])
+</code></pre><p>参数<br>start：必选项。arrayObj 中所指定的部分的开始元素是从零开始计算的下标。</p>
+<p>end可选项。arrayObj 中所指定的部分的结束元素是从零开始计算的下标。</p>
+<p>说明<br>slice 方法返回一个 Array 对象，其中包含了 arrayObj 的指定部分。<br>slice 方法一直复制到 end 所指定的元素，但是不包括该元素。如果 start 为负，将它作为 length + start处理，此处 length 为数组的长度。如果 end 为负，就将它作为 length + end 处理，此处 length 为数组的长度。如果省略 end ，那么 slice 方法将一直复制到 arrayObj 的结尾。如果 end 出现在 start 之前，不复制任何元素到新数组中。</p>
+<pre><code>var arr = [&quot;One&quot;,&quot;Two&quot;,&quot;Three&quot;];
+
+var arrtoo = arr.slice(0);
+arrtoo[1] = &quot;set Map&quot;;
+document.writeln(&quot;数组的原始值：&quot; + arr + &quot;&lt;br /&gt;&quot;);
+//Export:数组的原始值：One,Two,Three
+document.writeln(&quot;数组的新值：&quot; + arrtoo + &quot;&lt;br /&gt;&quot;);
+//Export:数组的新值：One,set Map,Three
+</code></pre><h3 id="concat-方法"><a href="#concat-方法" class="headerlink" title="concat 方法"></a>concat 方法</h3><p>concat() 方法用于连接两个或多个数组。<br>该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本。</p>
+<p>语法</p>
+<pre><code>arrayObject.concat(arrayX,arrayX,......,arrayX)
+</code></pre><p>说明:返回一个新的数组。该数组是通过把所有 arrayX 参数添加到 arrayObject 中生成的。如果要进行 concat() 操作的参数是数组，那么添加的是数组中的元素，而不是数组。</p>
+<pre><code>var arr = [&quot;One&quot;,&quot;Two&quot;,&quot;Three&quot;];
+
+var arrtooo = arr.concat();
+arrtooo[1] = &quot;set Map To&quot;;
+document.writeln(&quot;数组的原始值：&quot; + arr + &quot;&lt;br /&gt;&quot;);
+//Export:数组的原始值：One,Two,Three
+document.writeln(&quot;数组的新值：&quot; + arrtooo + &quot;&lt;br /&gt;&quot;);
+//Export:数组的新值：One,set Map To,Three
+</code></pre><h2 id="对象的深层拷贝-Object"><a href="#对象的深层拷贝-Object" class="headerlink" title="对象的深层拷贝 Object"></a>对象的深层拷贝 Object</h2><h3 id="主旨"><a href="#主旨" class="headerlink" title="主旨"></a>主旨</h3><p>Object的主旨是对每一个属性进行遍历，赋给一个新对象。</p>
+<h2 id="综合"><a href="#综合" class="headerlink" title="综合"></a>综合</h2><h3 id="Array跟Object都是对象，所以有以下方法迭代："><a href="#Array跟Object都是对象，所以有以下方法迭代：" class="headerlink" title="Array跟Object都是对象，所以有以下方法迭代："></a>Array跟Object都是对象，所以有以下方法迭代：</h3><pre><code>function cloneObject(obj)
+{
+    var o = obj.constructor === Array?[]:{};
+    for (var i in obj)
+    {
+        if(obj.hasOwnProperty(i))
+        {
+            o[i] = typeof obj[i]===&quot;object&quot;?cloneObject(obj[i]):obj[i];
+        }
+    }
+}
+</code></pre>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/lairongqin" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 Rongqin Lai<br></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

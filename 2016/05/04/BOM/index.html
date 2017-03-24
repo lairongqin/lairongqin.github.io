@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="BOMwindow对象全局作用域window对象同时扮演着ECMAScript中Global对象的角色，因此所有在全局作用域中声明的变量、函数都会编程window对象的属性和方法。
+全局变量不能通过delete操作符删除，而直接在window对象上的定义的属性可以。
+窗口关系及框架如果页面中包含框架">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Rongqin Lai">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="BOM"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Lai Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>BOM - Lai Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Roylai</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/lairongqin">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>BOM</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-05-04
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/JavaScript/">#JavaScript</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h1><h1 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h1><h2 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h2><p>window对象同时扮演着ECMAScript中Global对象的角色，因此所有在全局作用域中声明的变量、函数都会编程window对象的属性和方法。</p>
+<p>全局变量不能通过delete操作符删除，而直接在window对象上的定义的属性可以。</p>
+<h2 id="窗口关系及框架"><a href="#窗口关系及框架" class="headerlink" title="窗口关系及框架"></a>窗口关系及框架</h2><p>如果页面中包含框架，则每个框架都拥有自己的window对象，并且保存在frames集合中。在frames集合中，可以通过数值索引或者框架名称来访问相应的window对象。每个window对象都有一个name属性，其中包含框架的名称。</p>
+<h2 id="窗口位置"><a href="#窗口位置" class="headerlink" title="窗口位置"></a>窗口位置</h2><p>用来确定和修改window对象位置的属性和方法有很多</p>
+<p>IE,Safari,Opera和Chrome都提供了 screenLeft和screenTop属性,分别表示窗口相对于屏幕左边和上边的位置。</p>
+<p>Firefox 在screenX和screenY属性中提供相同的窗口位置信息，Safari和Chrome同时支持这两个属性。Opera也支持，但是与screenLeft和screenTop属性不对应。</p>
+<p>在IE、Opera中，screenLeft和screenTop中保存的是从屏幕左边和上边到由window对象表示的页面可见区域的距离。换句话说如果window对象是最外层对象，而且浏览器窗口紧贴屏幕最上端——即Y轴坐标为0，那么screenTop值就是位于页面可见区域上方的浏览器工具栏的像素高度。</p>
+<p>在Chrome、Firefox和Safari中，screenY或者screenTop中保存的是整个浏览器窗口相对于屏幕的坐标值，即在窗口的y轴坐标为0时返回0。</p>
+<p>移动窗口可以使用moveTo()和moveBy()方法.</p>
+<h2 id="窗口大小"><a href="#窗口大小" class="headerlink" title="窗口大小"></a>窗口大小</h2><p>IE9+、Firefox、Safari、Opera和Chrome均为此提供了四个属性：innerWidth、innerHeight、outerWidth、outerHeight。</p>
+<p>IE9+、safari和Firefox中，outerWidth和outerHeight返回浏览器窗口本身的尺寸。innerWidth和innerHeight表示该容器中页面视图区的大小（减去边框宽度）。</p>
+<p>在chrome中，outerWidth、outerHeight与innerWidth、innerHeight返回相同的值，即视口（viewport）大小而非浏览器窗口大小。</p>
+<p>在IE、Firefox、Safari、Opera和Chrome中，<code>document.documentElement.clientWidth</code>和<code>document.documentElement.clientHeight</code>中保存了视口的信息。</p>
+<p>IE6:</p>
+<ul>
+<li>标准模式: <code>document.documentElement.clientWidth</code>，<code>document.documentElement.clientHeight</code></li>
+<li>混杂模式: <code>document.body.clientWidth</code>和<code>document.body.clientHeight</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var pageWidth = window.innerWidth,</div><div class="line">  pageHeight = window.innerHeight;</div><div class="line"></div><div class="line">if (typeof pageWidth != &apos;number&apos;) &#123;</div><div class="line">  if (document.compatMode == &apos;css1Compat&apos;) &#123;</div><div class="line">    pageWidth = document.documentElement.clientWidth;</div><div class="line">    pageHeight = document.documentElement.clientHeight;</div><div class="line">  &#125; else &#123;</div><div class="line">    pageWidth = document.body.clientWidth;</div><div class="line">    pageHeight = document.body.clientHeight;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="导航和打开窗口"><a href="#导航和打开窗口" class="headerlink" title="导航和打开窗口"></a>导航和打开窗口</h2><p>使用window.open()方法既可以当导航到一个特定的URL，也可以打开一个新的窗口。这个方法可以接收四个参数：URL，目标窗口，特性字符串以及一个表示新页面是否取代浏览器历史记录中当前加载页面的布尔值。</p>
+<p>可以通过window.open的返回值来确定是否被屏蔽，如果返回值为NULL那么弹出窗口就被浏览器屏蔽了</p>
+<h2 id="间歇调用和超时调用"><a href="#间歇调用和超时调用" class="headerlink" title="间歇调用和超时调用"></a>间歇调用和超时调用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">setTimeout()</div><div class="line">clearTimeout()</div><div class="line">setInterval()</div><div class="line">clearInterval()</div></pre></td></tr></table></figure>
+<h2 id="系统对话框"><a href="#系统对话框" class="headerlink" title="系统对话框"></a>系统对话框</h2><ul>
+<li>alert</li>
+<li>confirm</li>
+<li>prompt</li>
+</ul>
+<h1 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h1><p>window.location与document.location引用的是同一个对象。</p>
+<p>location对象的用处不只表现在保存着当前文档的信息，还表现在它将URL解析为独立的片段，让开发人员可以通过不同的属性访问这些片段。</p>
+<ul>
+<li>hash</li>
+<li>host</li>
+<li>hostname</li>
+<li>href</li>
+<li>pathname</li>
+<li>port</li>
+<li>protocol</li>
+<li>search</li>
+</ul>
+<h2 id="查询字符串参数"><a href="#查询字符串参数" class="headerlink" title="查询字符串参数"></a>查询字符串参数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">function getQueryStringArgs() &#123;</div><div class="line">  var qs = (location.search.length &gt; 0 ? location.search.substring(1) : &apos;&apos;),</div><div class="line">    args = &#123;&#125;,</div><div class="line">    items = qs.length ? qs.split(&apos;&amp;&apos;) : [],</div><div class="line">    item = null,</div><div class="line">    name = null,</div><div class="line">    value = null,</div><div class="line">    i = 0,</div><div class="line">    len = items.length;</div><div class="line"></div><div class="line">  for (i = 0; i &lt; len; i++) &#123;</div><div class="line">    item = items[i].split(&apos;=&apos;);</div><div class="line">    name = decodeURIComponent(item[0]);</div><div class="line">    value = decodeURIComponent(item[1]);</div><div class="line">    if (name.length) &#123;</div><div class="line">      args[name] = value;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  return args;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="位置操作"><a href="#位置操作" class="headerlink" title="位置操作"></a>位置操作</h2><p>使用location对象可以通过很多方式来改变浏览器的位置。</p>
+<ul>
+<li>location.assign</li>
+<li>window.location</li>
+<li>location.href</li>
+</ul>
+<p>另外，修改location对象的其他属性也可以改变当前加载的页面。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">location.hash = &quot;#section1&quot;;</div><div class="line">location.search = &quot;?q=JS&quot;;</div><div class="line">location.hostname = &quot;www.yahoo.com&quot;;</div><div class="line">locatrion.pathname = &quot;mydir&quot;;</div><div class="line">location.port= &quot;8080&quot;;</div></pre></td></tr></table></figure>
+<p>每次修改location的属性（hash除外），页面都会以新URL重新加载。</p>
+<p>当上述任何一种方式修改URL之后，浏览器的历史记录中就会生成一条新纪录，因此用户通过单机“后退”后，就会跳回到前一个页面。要禁用这种行为，可以使用 <code>replace()</code> 方法。</p>
+<ul>
+<li>location.replace()</li>
+</ul>
+<p><code>replace()</code> 只接收一个参数URL，改变浏览器位置，但不在历史记录中生成新纪录。</p>
+<ul>
+<li>location.reload() 重新加载当前显示的页面。</li>
+</ul>
+<h1 id="navigator-对象"><a href="#navigator-对象" class="headerlink" title="navigator 对象"></a>navigator 对象</h1><p>navigator 对象是识别客户端浏览器的标准。</p>
+<h2 id="检测插件"><a href="#检测插件" class="headerlink" title="检测插件"></a>检测插件</h2><p>检测浏览器中是否安装了特定的插件，对于非IE浏览器，可以使用<code>plugins</code> 数组来达到这个目的。</p>
+<ul>
+<li>name</li>
+<li>description</li>
+<li>filename</li>
+<li>length</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// 非IE</div><div class="line">function hasPlugin(name) &#123;</div><div class="line">  name = name.toLowerCase();</div><div class="line">  for (var i = 0; i &lt; navigator.plugins.length; i++) &#123;</div><div class="line">    if (navigator.plugins[i].name.toLowerCase().indexOf(name) &gt; -1) &#123;</div><div class="line">      return true;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>检测IE中的插件比较麻烦，因为IE不支持Netscape式的插件。在IE中检测插件的唯一方式就是使用专有的ActiveXObject类型，并尝试创建一个特定插件的实例。IE以COM对象的方式实现插件，而COM对象使用唯一标识符来标识。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// IE</div><div class="line">function hasIEPlugin(name) &#123;</div><div class="line">  try &#123;</div><div class="line">    new ActiveXObject(name);</div><div class="line">    return true;</div><div class="line">  &#125; catch (ex) &#123;</div><div class="line">    return false;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="注册处理程序"><a href="#注册处理程序" class="headerlink" title="注册处理程序"></a>注册处理程序</h2><ul>
+<li>registerContentHandler()</li>
+<li>registerProtocolHandler()</li>
+</ul>
+<p>这两个方法可以让站点指明它可以处理特定类型的信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">navigator.registerContentHandler(&apos;application/rss+xml&apos;,&apos;http://www.somewhere.com?feed=%s&apos;,&apos;some reader&apos;);</div><div class="line">navigator.registerProtocolHandler(&apos;mailto&apos;,&apos;http://www.somemailclient.com?cmd=%s&apos;,&apos;some mail client&apos;);</div></pre></td></tr></table></figure>
+<h1 id="screen对象"><a href="#screen对象" class="headerlink" title="screen对象"></a>screen对象</h1><p>screen对象基本上只用来表明客户端的能力，其中包括浏览器外部的显示器的信息。</p>
+<h1 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h1><p>history对象保存着用户上网的历史记录，从窗口被打开的那一刻算起。因为history是window对象的属性，因此每个浏览器窗口、每个标签页乃至每个框架，都有自己的history对象与特定的window对象关联。</p>
+<p>使用go()方法可以在用户的历史记录中任意穿梭。接收一个参数，表示向前或者向后跳转的页面数的一个整数值。</p>
+<p>也可以给go()方法传递一个字符串参数，此时浏览器会自动找寻离这个字符串参数最近的第一个位置。如果浏览器不包含，则什么也不做。</p>
+<p>还可以使用<code>back()</code>和<code>forward()</code>来代替<code>go()</code>。这两个方法来模仿浏览器的前进或者后退。</p>
+<p>history对象还有一个length属性，保存着历史记录的数量。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/lairongqin" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 Rongqin Lai<br></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

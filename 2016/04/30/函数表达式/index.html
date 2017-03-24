@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="函数表达式定义函数的方式有两种，一种是函数声明，另一种是函数表达式。
+关于函数声明，它的一个最重要的特征就是函数声明提升（function declaration hoisting），意思是在执行代码之前会先读取函数声明。这意味着可以把函数声明放在语句后面。
+注意，函数表达式没有声明提升。
+函数也可">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Rongqin Lai">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="函数表达式"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Lai Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>函数表达式 - Lai Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Roylai</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/lairongqin">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>函数表达式</h1>
+                    
+                    <h2 class="post-subheading">
+                        定义函数的方式有两种，一种是函数声明，另一种是函数表达式。
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-04-30
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/JavaScript/">#JavaScript</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h1><p>定义函数的方式有两种，一种是函数声明，另一种是函数表达式。</p>
+<p>关于函数声明，它的一个最重要的特征就是函数声明提升（function declaration hoisting），意思是在执行代码之前会先读取函数声明。这意味着可以把函数声明放在语句后面。</p>
+<p>注意，函数表达式没有声明提升。</p>
+<p>函数也可以作为返回值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function parent() &#123;</div><div class="line">  return function child() &#123;</div><div class="line">    console.log(&apos;child&apos;);</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line">const a = parent();</div><div class="line">a(); // child</div></pre></td></tr></table></figure>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>递归是一个函数通过名字调用自身的情况下构成的。通常情况下可以这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var factorial = (function f(num) &#123;</div><div class="line">  if (num &lt; 1) &#123;</div><div class="line">    return 1;</div><div class="line">  &#125; else &#123;</div><div class="line">    return num * f(num - 1);</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">console.log(factorial(5)); //120</div></pre></td></tr></table></figure>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function parent() &#123;</div><div class="line">  var num = 0;</div><div class="line">  return function child() &#123;</div><div class="line">    num++;</div><div class="line">    console.log(num);</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">parent()();//1</div></pre></td></tr></table></figure>
+<p>当某个函数被调用时，会创建一个执行环境（execution context）以及相应的作用域链，使用arguments和其他命名参数的值来初始化函数的活动对象。但在作用域链中，外部函数的活动对象始终处于第二位，外部函数的外部函数的活动对象处于第三位……一直到全局变量。</p>
+<p>在一个函数内部定义的函数将会包含外部函数的活动对象添加到它的作用域中。</p>
+<p>更重要的是，当外部函数执行完毕，返回内部函数的时候，外部函数的活动对象也不会校会，因为返回的内部函数的作用域链仍在引用这个活动对象。</p>
+<p>换言之，外部函数的执行环境的作用域链会被销毁，但它的活动对象仍然会留在内存中。直到内部函数被销毁后，外部函数的活动对象才会被销毁。</p>
+<p>我们可以通过对返回的内部函数的引用指向NULL来通知垃圾回收例程将其清除。随着匿名函数的作用域链被销毁，其他作用域除了全局作用域也都可以安全的销毁了。</p>
+<p>由于闭包会携带包含他的函数的函数的作用域，因此会比其他函数占用更多的内存。过度使用闭包可能会导致内存占用过多。</p>
+<h3 id="闭包与变量"><a href="#闭包与变量" class="headerlink" title="闭包与变量"></a>闭包与变量</h3><p>作用域链的这种闭包机制引出了一个值得注意的副作用，即闭包只能取得包含函数中任何变量的最后一个值。闭包保存的是整个变量对象，而不是某个特殊的变量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function createFunctions() &#123;</div><div class="line">  var result = new Array();</div><div class="line">  for (var i = 0; i &lt; 10; i++) &#123;</div><div class="line">    result[i] = function () &#123;</div><div class="line">      return i;</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line">  return result;</div><div class="line">&#125;</div><div class="line">var a = createFunctions();</div><div class="line">a.forEach(function (item, index, array) &#123;</div><div class="line">  console.log(item()); //10</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>这个函数会返回一个函数数组，调用每个函数会返回一个数值，表面上看会返回函数的索引，0返回0，1返回1这样。但实际上每个函数都返回的10。因为每个函数的作用域链中都保存着createFunctions的活动对象，所以他们引用的都是同一个变量i。当createFunction执行完毕后，变量i的值为10。</p>
+<p>当然，为了解决这个问题，我们可以创建一个匿名函数，利用闭包强制让行为符合预期。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function createFunctions() &#123;</div><div class="line">  var result = new Array();</div><div class="line">  for (var i = 0; i &lt; 10; i++) &#123;</div><div class="line">    result[i] = (function (num) &#123;</div><div class="line">      return function () &#123;</div><div class="line">        return num;</div><div class="line">      &#125;;</div><div class="line">    &#125;(i));</div><div class="line">  &#125;</div><div class="line">  return result;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var a = createFunctions();</div><div class="line"></div><div class="line">a.forEach(function (item, index, array) &#123;</div><div class="line">  console.log(item());</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>简单的说，我们让每个函数数组中的函数的作用域链都指向匿名函数，匿名函数的活动对象都各自保存了i的值。</p>
+<h3 id="关于this对象"><a href="#关于this对象" class="headerlink" title="关于this对象"></a>关于this对象</h3><p>this对象是在运行时基于函数的执行环境绑定的：在全局函数中，this等于window，而当作为某个对象的方法调用时，this等于那个对象。不过，匿名函数的执行环境具有全局性，因此其this对象通常指向window。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var name = &apos;lai&apos;;</div><div class="line"></div><div class="line">var object = &#123;</div><div class="line">  name: &apos;Roy&apos;,</div><div class="line">  getname() &#123;</div><div class="line">    console.log(this.name);</div><div class="line">  &#125;,</div><div class="line">  getname2() &#123;</div><div class="line">    return function () &#123;</div><div class="line">      console.log(this.name);</div><div class="line">    &#125;();</div><div class="line">  &#125;,</div><div class="line">&#125;;</div><div class="line"></div><div class="line">object.getname(); // roy</div><div class="line">object.getname2(); // lai</div></pre></td></tr></table></figure>
+<p>每个函数在被调用时都会自动取得两个特殊变量：this和arguments。内部函数在搜索这两个变量时，只会搜索到其活动对象为止，因此永远不可能直接访问外部函数中的这两个变量。</p>
+<p>可以把外部作用域中的this对象保存在一个闭包能够访问到的变量里，就可以让闭包访问该对象了。</p>
+<p>在几种特殊情况下，this的值可能会意外地改变。比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var name = &apos;window&apos;;</div><div class="line">var object = &#123;</div><div class="line">  name: &apos;roy&apos;,</div><div class="line">  getName:function () &#123;</div><div class="line">    console.log(this.name);</div><div class="line">  &#125;,</div><div class="line">&#125;;</div><div class="line"></div><div class="line">object.getName(); //roy</div><div class="line">(object.getName = object.getName)(); //window</div></pre></td></tr></table></figure>
+<p>第二行代码执行了一条赋值语句，然后再调用赋值后的结果。因为这个赋值表达式的值是函数本身，所以this的值不能得到维持，结果就返回了 window;</p>
+<h3 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h3><p>如果闭包的作用域链中个保存着一个HTML元素，那么就意味着该元素将无法被销毁。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function assignHandler()&#123;</div><div class="line">    var element = document.getElementById(&quot;someElement&quot;);</div><div class="line">    element.onclick = function()&#123;</div><div class="line">        alert(element.id);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以上代码创建了一个作为element元素事件处理程序的闭包，而这个闭包则又创建了一个循环引用。由于匿名函数保存了对assignHandler()的活动对象的引用，因此就会导致无法减少element的引用计数。只要匿名函数存在，element的引用数至少也是1，因此他它所占的内存就永远不会被回收。</p>
+<p>不过我们可以这样稍微改一下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function assignHandler()&#123;</div><div class="line">    var element = document.getElementById(&quot;someElement&quot;);</div><div class="line">    var id = element.id;</div><div class="line">    element.onclick = function()&#123;</div><div class="line">        alert(id);</div><div class="line">    &#125;</div><div class="line">    element = null;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>通过把element.id的一个副本保存在一个变量中，并且在闭包中引用该变量消除了循环引用，但是仅仅是这样是无法解决内存泄漏的问题的。“闭包会引用包含函数的整个活动变量”,其中就包含着element。即使闭包不<br>不直接引用element，包含函数的活动对象中仍然会保存一个引用。因此，有必要把element指向null。这样能够接触对DOM对象的引用，顺利地减少其引用数，确保正常回收其占用的内存。</p>
+<h2 id="模仿块级作用域"><a href="#模仿块级作用域" class="headerlink" title="模仿块级作用域"></a>模仿块级作用域</h2><p>ES6的块级作用域已经支持。</p>
+<h2 id="私有变量"><a href="#私有变量" class="headerlink" title="私有变量"></a>私有变量</h2><p>JS没有私有成员的概念，所有对象都是公有的。但是在任何函数中定义的变量，都可以认为是私有变量，因为不能在函数的外部访问这些变量。私有变量包括函数的参数、局部函数和在函数内部定义的其他函数。</p>
+<p>把有权访问私有变量和私有函数的公有方法成为特权方法，有两种在对象上建立特权方法的方式。</p>
+<p>第一种：在构造函数中定义特权方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function MyObject()&#123;</div><div class="line">    var privateVariable = 10;</div><div class="line">    function privateFunction()&#123;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">    this.publicMethod = function()&#123;</div><div class="line">        privateVariable++;</div><div class="line">        return privateFunction();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在构造函数中定义特权方法有个缺点，就是你必须用构造函数模式来达到这个目的。构造函数模式的缺点就是针对每个函数，都会创建一同样一组新方法，而使用静态私有变量来实现特权方法可以避免这个问题。</p>
+<h3 id="静态私有变量"><a href="#静态私有变量" class="headerlink" title="静态私有变量"></a>静态私有变量</h3><p>通过在私有作用域中定义私有变量或函数，同样也可以创建特权方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">(function () &#123;</div><div class="line">  var privateVariable = 10;</div><div class="line"></div><div class="line">  function privateFunction() &#123;</div><div class="line">    return false;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  MyObject = function () &#123;</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  MyObject.prototype.publicMethod = function () &#123;</div><div class="line">    privateVariable++;</div><div class="line">    return privateFunction();</div><div class="line">  &#125;;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p>这个模式创建了一个私有作用域，并在其中封装了一个构造函数及相应的方法。在私有作用域中，首先定义了私有变量和私有函数，然后定义了构造函数及其公有方法。公有方法是在原型函数上定义的，是典型的原型模式。</p>
+<p>这个模式在定义构造函数时并没有使用函数声明，而是使用了函数表达式。函数声明智能创建局部函数，出于同样的原因，我们也没有在声明MyObject时使用var关键字。——“初始化未经声明的变量，总是会创建一个全局变量。”因此，MyObject就成了一个全局变量，能够在私有作用域之外被访问到。但也要知道，在严格模式下给未经声明的变量赋值会导致错误。</p>
+<p>这个模式与在构造函数中定义特权方法的主要区别，就在于私有变量和函数是由实例共享的。由于特权方法是在原型上定义的，因此所有实例都使用同一个函数。而这个特权方法，作为一个闭包，总是保存着对包含作用域的引用。</p>
+<p>对比：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">function People() &#123;</div><div class="line">  var name = &apos;people&apos;;</div><div class="line">  this.getName = function () &#123;</div><div class="line">    console.log(name);</div><div class="line">  &#125;;</div><div class="line">  this.setName = function (newName) &#123;</div><div class="line">    name = newName;</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var men = new People();</div><div class="line"></div><div class="line">men.getName();  //people</div><div class="line">men.setName(&apos;Roy&apos;);</div><div class="line">men.getName();  //Roy</div><div class="line"></div><div class="line">var men2 = new People();</div><div class="line">men2.getName(); //people</div><div class="line">men2.setName(&apos;Lai&apos;);</div><div class="line">men2.getName(); //Lai</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">(function () &#123;</div><div class="line">  var name = &apos;people&apos;;</div><div class="line">  People = function (value) &#123; name = value; &#125;;</div><div class="line">  People.prototype.getName = function () &#123;</div><div class="line">    console.log(name);</div><div class="line">  &#125;;</div><div class="line">  People.prototype.setName = function (newName) &#123;</div><div class="line">    name = newName;</div><div class="line">  &#125;;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">var men = new People();</div><div class="line">men.getName();  // people</div><div class="line">men.setName(&apos;Roy&apos;);</div><div class="line">men.getName();  // Roy</div><div class="line">var men2 = new People();</div><div class="line">men2.getName(); // Roy</div><div class="line">men2.setName(&apos;Lai&apos;);</div><div class="line">men2.getName(); // Lai</div><div class="line">men.getName(); // Lai</div></pre></td></tr></table></figure>
+<h3 id="模块模式"><a href="#模块模式" class="headerlink" title="模块模式"></a>模块模式</h3><p>模块模式是为单例创建私有变量和特权方法。所谓单例，指的就是只有一个实例的对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">var singleton = function () &#123;</div><div class="line">  var privateVariable = 10;</div><div class="line">  function privateFunction() &#123;</div><div class="line">    return false;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  return &#123;</div><div class="line">    publicProperty: true,</div><div class="line">    publicMethod() &#123;</div><div class="line">      privateVariable++;</div><div class="line">      console.log(privateVariable);</div><div class="line">      return privateVariable;</div><div class="line">    &#125;,</div><div class="line">  &#125;;</div><div class="line">&#125;();</div><div class="line"></div><div class="line">singleton.publicMethod(); // 11</div><div class="line">singleton.publicMethod(); // 12</div></pre></td></tr></table></figure>
+<p>这种模式在需要对单例进行初始化，同时有需要维护其私有变量时是非常有用的。<br>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var application = function () &#123;</div><div class="line">  var components = new Array();</div><div class="line">  components.push(new BaseComponent());</div><div class="line"></div><div class="line">  return &#123;</div><div class="line">    getComponent : function () &#123;</div><div class="line">      return components.length;</div><div class="line">    &#125;,</div><div class="line">    registerComponent: function (component) &#123;</div><div class="line">      if (typeof component == &apos;object&apos;) &#123;</div><div class="line">        components.push(component);</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">  &#125;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>在web应用程序中，经常需要使用一个单例来管理应用程序级的信息。这个简单的例子创建了一个用于管理组件的application对象。在创建这个对象的过程中，首先声明了一个私有的components数组，并向数组中添加了一个BaseComponent的实力，而返回对象的方法都是有权访问components数组的特权方法。前者只是返回已注册的组件数目，后者用于注册新组件。</p>
+<p>换言之，如果你必须创建一个对象并以某些数据对其进行初始化，同时还要公开一些能够访问这些私有数据的方法，那么就可以使用模块模式。</p>
+<h3 id="增强的模块模式"><a href="#增强的模块模式" class="headerlink" title="增强的模块模式"></a>增强的模块模式</h3><p>有人进一步改进了模块模式，即在返回对象之前加入对其增强的代码。这种增强的模块适合那些单例必须是某种类型的实例，同时还必须添加某些属性和方法对其加以增强的情况。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">var application = function () &#123;</div><div class="line">  var components = new Array();</div><div class="line"></div><div class="line">  components.push(new BaseComponent());</div><div class="line"></div><div class="line">  var app = new BaseComponent();</div><div class="line"></div><div class="line">  app.getComponentCount = function () &#123;</div><div class="line">    return components.length;</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  app.registerComponent = function (nweComponent) &#123;</div><div class="line">    if (typeof components == &apos;object&apos;) &#123;</div><div class="line">      components.push(components);</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">  return app;</div><div class="line">&#125;();</div></pre></td></tr></table></figure>
+<p>应用程序单例中，首先也是像前面例子中一样定义了私有变量。主要的不同之处在于命名管理app的创建过程，因为它必须是BaseComponent的实例。这个实例实际上是application对象的局部变量版。此后，我们又为app对象添加了能够访问私有变量的公有方法。最后异步是返回app对象，结果仍然是将它赋值给全局变量application。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/lairongqin" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 Rongqin Lai<br></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
