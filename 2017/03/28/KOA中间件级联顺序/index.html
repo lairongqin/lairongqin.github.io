@@ -186,6 +186,7 @@
 <p>控制台运行结果：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">A 1</div><div class="line">B 1</div><div class="line">C 1</div><div class="line">last</div><div class="line">C 2</div><div class="line">B 2</div><div class="line">A 2</div></pre></td></tr></table></figure>
 <p>上面的例子返回了一个单纯的“hello word网页”，首先request请求通过A中间件，控制台输出“A 1”当遇到<code>next()</code>语句时，便把控制权交给了接下来的B中间件，以此类推，一直到最后的中间件完成后，栈就会释放，每个中间件依次重新得到控制权，进行“upstream”的行为，即又返回C -&gt; B -&gt; A 的顺序。</p>
+<p>注意：倘若没有调用next()那么中间件的级联就不会向下进行，就会直接upstream了</p>
 <p>这就是Koa中间件的级联顺序。</p>
 
 
