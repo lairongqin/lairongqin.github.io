@@ -12,7 +12,7 @@
     
         <meta name="description" content="https证书方面的知识不是很懂，留个坑，以后再填
 因为需要架设一个在locahost上能正常运行https的服务器，便在这个地方找了如下的代码，生成自签名证书
-openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out ca.">
+12345678910openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:20">
     
 
     <!--Author-->
@@ -184,11 +184,7 @@ openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out ca.">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <p>https证书方面的知识不是很懂，留个坑，以后再填</p>
 <p>因为需要架设一个在locahost上能正常运行https的服务器，便在这个<a href="https://www.youtube.com/watch?v=s76l4BhY3FY" target="_blank" rel="external">地方</a>找了如下的代码，生成自签名证书</p>
-<p>openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out ca.key</p>
-<p>openssl req -new -x509 -days 360 -key ca.key -subj “/CN=Test CA/0=AAAA TEST Organization” -out ca.crt</p>
-<p>openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out server.key</p>
-<p>openssl req -new -key server.key -subj “/CN=localhost/0=AAAA Test Organization” -out server.csr</p>
-<p>openssl x509 -days 360 -req -in server.csr -CAcreateserial -CA ca.crt -CAkey ca.key -out server.crt</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out ca.key</div><div class="line"></div><div class="line">openssl req -new -x509 -days 360 -key ca.key -subj &quot;/CN=Test CA/0=AAAA TEST Organization&quot; -out ca.crt</div><div class="line"></div><div class="line">openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out server.key</div><div class="line"></div><div class="line">openssl req -new -key server.key -subj &quot;/CN=localhost/0=AAAA Test Organization&quot; -out server.csr</div><div class="line"></div><div class="line">openssl x509 -days 360 -req -in server.csr -CAcreateserial -CA ca.crt -CAkey ca.key -out server.crt</div></pre></td></tr></table></figure>
 <p>生成后的文件有</p>
 <ul>
 <li>ca.crt</li>
