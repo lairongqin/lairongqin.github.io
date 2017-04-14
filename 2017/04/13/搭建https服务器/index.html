@@ -12,7 +12,7 @@
     
         <meta name="description" content="https证书方面的知识不是很懂，留个坑，以后再填
 因为需要架设一个在locahost上能正常运行https的服务器，便在这个地方找了如下的代码，生成自签名证书
-12345678910openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:20">
+123456789101112131415// 创建Certificate Authority的密钥 加密算法RSA，长度2048open">
     
 
     <!--Author-->
@@ -184,7 +184,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <p>https证书方面的知识不是很懂，留个坑，以后再填</p>
 <p>因为需要架设一个在locahost上能正常运行https的服务器，便在这个<a href="https://www.youtube.com/watch?v=s76l4BhY3FY" target="_blank" rel="external">地方</a>找了如下的代码，生成自签名证书</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out ca.key</div><div class="line"></div><div class="line">openssl req -new -x509 -days 360 -key ca.key -subj &quot;/CN=Test CA/0=AAAA TEST Organization&quot; -out ca.crt</div><div class="line"></div><div class="line">openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out server.key</div><div class="line"></div><div class="line">openssl req -new -key server.key -subj &quot;/CN=localhost/0=AAAA Test Organization&quot; -out server.csr</div><div class="line"></div><div class="line">openssl x509 -days 360 -req -in server.csr -CAcreateserial -CA ca.crt -CAkey ca.key -out server.crt</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">// 创建Certificate Authority的密钥 加密算法RSA，长度2048</div><div class="line">openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out ca.key</div><div class="line"></div><div class="line">// 通过CA密钥来创建证书，-days表示证书有效期，CN:办法者名称，0：组织名称</div><div class="line">openssl req -new -x509 -days 360 -key ca.key -subj &quot;/CN=Test CA/0=AAAA TEST Organization&quot; -out ca.crt</div><div class="line"></div><div class="line">// 创建SSL服务端私钥</div><div class="line">openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out server.key</div><div class="line"></div><div class="line">// 用服务端私钥创建证书，0=字段必须与CA证书的相同，CN为公用名，必须为网站的域名（不带www）</div><div class="line">openssl req -new -key server.key -subj &quot;/CN=localhost/0=AAAA Test Organization&quot; -out server.csr</div><div class="line"></div><div class="line">// 用CA根证书签署SSL自建证书</div><div class="line">openssl x509 -days 360 -req -in server.csr -CAcreateserial -CA ca.crt -CAkey ca.key -out server.crt</div></pre></td></tr></table></figure>
 <p>生成后的文件有</p>
 <ul>
 <li>ca.crt</li>
