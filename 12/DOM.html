@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="DOM节点层次Node类型nodeType:
+
+Element(1)
+Attribute_node(2)
+Text_node(3)
+
+节点关系
+childNodes
+
+不是Array实例，将Array转化为实例:var nodesArray = Array.prototype.slice.call(">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Rongqin Lai">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="DOM"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Lai Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>DOM - Lai Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Roylai</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/lairongqin">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>DOM</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-05-18
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/undefined">#undefined</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><h1 id="节点层次"><a href="#节点层次" class="headerlink" title="节点层次"></a>节点层次</h1><h2 id="Node类型"><a href="#Node类型" class="headerlink" title="Node类型"></a>Node类型</h2><p>nodeType:</p>
+<ul>
+<li>Element(1)</li>
+<li>Attribute_node(2)</li>
+<li>Text_node(3)</li>
+</ul>
+<h3 id="节点关系"><a href="#节点关系" class="headerlink" title="节点关系"></a>节点关系</h3><ul>
+<li>childNodes</li>
+</ul>
+<p>不是Array实例，将Array转化为实例:<br><code>var nodesArray = Array.prototype.slice.call(someNode.childNodes,0)</code></p>
+<ul>
+<li>parentNode</li>
+<li>previousSibling</li>
+<li>nextSibling</li>
+<li>hasChildNodes()   查询是否有子节点</li>
+<li>ownerDocument</li>
+</ul>
+<ul>
+<li>appendChild()</li>
+<li>insertBefore()</li>
+<li>replaceChild()</li>
+<li>removeChild()</li>
+</ul>
+<p>其他方法</p>
+<ul>
+<li>cloneNode()  深浅复制</li>
+<li>normalize()  处理文档树中的文本节点</li>
+</ul>
+<h2 id="Document类型"><a href="#Document类型" class="headerlink" title="Document类型"></a>Document类型</h2><table>
+<thead>
+<tr>
+<th>name</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nodeType</td>
+<td>9</td>
+</tr>
+<tr>
+<td>nodeValue</td>
+<td>null</td>
+</tr>
+<tr>
+<td>parentNode</td>
+<td>null</td>
+</tr>
+<tr>
+<td>ownerDocument</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h3 id="文档的子节点"><a href="#文档的子节点" class="headerlink" title="文档的子节点"></a>文档的子节点</h3><ul>
+<li>document.documentElement —— 指向html元素</li>
+<li>document.body</li>
+<li>document.doctype</li>
+</ul>
+<h3 id="文档的信息"><a href="#文档的信息" class="headerlink" title="文档的信息"></a>文档的信息</h3><ul>
+<li>document.titile</li>
+<li>document.URL  ——  完整URL</li>
+<li>document.domain</li>
+<li>document.referrer —— URL不包括查询字符串，hash</li>
+</ul>
+<p>通过设置document.domain进行跨域<br>document.domain设置限制，越发松散</p>
+<h3 id="查找元素"><a href="#查找元素" class="headerlink" title="查找元素"></a>查找元素</h3><ul>
+<li>getElementById</li>
+<li>getElementsByTagName</li>
+<li>getElementsByName</li>
+</ul>
+<p>HTMLCollection 对象方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var img = document.getElementByTagName(&apos;img&apos;);</div><div class="line">img[0];</div><div class="line">img.item(0);</div><div class="line"></div><div class="line">// 通过name访问</div><div class="line">img.namedItem(&apos;name&apos;);</div><div class="line">img[&apos;name&apos;];</div></pre></td></tr></table></figure>
+<h3 id="特殊集合"><a href="#特殊集合" class="headerlink" title="特殊集合"></a>特殊集合</h3><ul>
+<li>document.anchors</li>
+<li>document.applets(已不考虑用)</li>
+<li>document.forms</li>
+<li>document.links</li>
+</ul>
+<h3 id="DOM一致性检测"><a href="#DOM一致性检测" class="headerlink" title="DOM一致性检测"></a>DOM一致性检测</h3><ul>
+<li>document.implementation</li>
+<li>DOM1：hasFeature()</li>
+</ul>
+<h3 id="文档写入"><a href="#文档写入" class="headerlink" title="文档写入"></a>文档写入</h3><ul>
+<li>write</li>
+<li>writeln</li>
+<li>open</li>
+<li>close</li>
+</ul>
+<h2 id="Element类型"><a href="#Element类型" class="headerlink" title="Element类型"></a>Element类型</h2><table>
+<thead>
+<tr>
+<th>name</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nodeType</td>
+<td>1</td>
+</tr>
+<tr>
+<td>nodeName</td>
+<td>元素名</td>
+</tr>
+<tr>
+<td>nodeValue</td>
+<td>null</td>
+</tr>
+<tr>
+<td>parentNode</td>
+<td>Document/Element</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>nodeName = tagName 比较时最好先 toLowerCase</li>
+</ul>
+<h3 id="HTML元素"><a href="#HTML元素" class="headerlink" title="HTML元素"></a>HTML元素</h3><ul>
+<li>id</li>
+<li>title</li>
+<li>lang</li>
+<li>dir</li>
+<li>className</li>
+</ul>
+<p>所有HTML元素都是由HTMLElement或者其更具体的子类型来表示的。</p>
+<p><img src="http://7xt6zr.com1.z0.glb.clouddn.com/blog160516.png" alt="表单"></p>
+<p><img src="http://7xt6zr.com1.z0.glb.clouddn.com/blog160516_2.png" alt="表单2"></p>
+<h3 id="取得特性"><a href="#取得特性" class="headerlink" title="取得特性"></a>取得特性</h3><ul>
+<li>getAttribute()</li>
+<li>setAttribute()</li>
+<li>removeAttribute()</li>
+</ul>
+<p>属性特殊特性：</p>
+<ol>
+<li>style,通过css为元素指定样式。在通过getAttribute()访问时，返回的是style特性值中包含的CSS文本，而通过属性访问来则会返回一个对象。</li>
+<li>onclick这样的事件处理程序。当在元素上使用getAttribute访问时，返回相应代码的字符串。而在用onclick属性时，返回一个JS函数。</li>
+</ol>
+<h3 id="设置特性"><a href="#设置特性" class="headerlink" title="设置特性"></a>设置特性</h3><p>setAttribute():特性名，值</p>
+<p>删除特性：removeAttribute()</p>
+<h3 id="attributes属性"><a href="#attributes属性" class="headerlink" title="attributes属性"></a>attributes属性</h3><p>Element类型是使用attributes属性的唯一一个DOM节点类型。包含一个动态的NamedNodeMap，与NodeList类似，也是一个“动态”的集合。</p>
+<p>NameNodeMap对象拥有下列方法：</p>
+<ul>
+<li>getNamedItem()</li>
+<li>removeNamedItem()</li>
+<li>setNamedItem()</li>
+<li>item()</li>
+</ul>
+<h3 id="创建元素"><a href="#创建元素" class="headerlink" title="创建元素"></a>创建元素</h3><p>document.createElement()</p>
+<h3 id="元素的子节点"><a href="#元素的子节点" class="headerlink" title="元素的子节点"></a>元素的子节点</h3><p>childNodes</p>
+<h2 id="TEXT-类型"><a href="#TEXT-类型" class="headerlink" title="TEXT 类型"></a>TEXT 类型</h2><table>
+<thead>
+<tr>
+<th>value</th>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nodeType</td>
+<td>3</td>
+</tr>
+<tr>
+<td>nodeName</td>
+<td>#text</td>
+</tr>
+<tr>
+<td>nodeValue</td>
+<td>所包含文本</td>
+</tr>
+<tr>
+<td>parentNode</td>
+<td>Element</td>
+</tr>
+<tr>
+<td>子节点</td>
+<td>没有</td>
+</tr>
+</tbody>
+</table>
+<p>可以通过nodeValue属性或data属性访问Text节点中包含的文本，这两个属性中包含的值相同。下列方法操作节点中的文本：</p>
+<ul>
+<li>appendData</li>
+<li>deleteData</li>
+<li>insertData</li>
+<li>replaceData</li>
+<li>splitData</li>
+<li>substringData</li>
+</ul>
+<h3 id="创建文本节点"><a href="#创建文本节点" class="headerlink" title="创建文本节点"></a>创建文本节点</h3><p>document.createTextNode</p>
+<h3 id="规范化文本节点"><a href="#规范化文本节点" class="headerlink" title="规范化文本节点"></a>规范化文本节点</h3><p>normalize() 父元素调用，合并子text节点</p>
+<h3 id="分割文本节点"><a href="#分割文本节点" class="headerlink" title="分割文本节点"></a>分割文本节点</h3><p>splitText()</p>
+<h2 id="DocumentFragment类型"><a href="#DocumentFragment类型" class="headerlink" title="DocumentFragment类型"></a>DocumentFragment类型</h2><p>document fragment是一种“轻量级”的文档，可以包含和控制节点。</p>
+<p>nodeType：11<br>nodeName：”#document-fragment”</p>
+<p>不可以把文档片段直接添加到文档中，但是可以将它作为一个“仓库”来使用，即可以在里面保存将来可能会添加到文档中的节点。</p>
+<p>创建： <code>document.createDocumentFragment()</code></p>
+<h1 id="DOM操作技术"><a href="#DOM操作技术" class="headerlink" title="DOM操作技术"></a>DOM操作技术</h1><h2 id="动态脚本"><a href="#动态脚本" class="headerlink" title="动态脚本"></a>动态脚本</h2><ol>
+<li>动态插入script标签</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function loadScript(url) &#123;</div><div class="line">    var script = document.createElement(&apos;script&apos;);</div><div class="line">    script.type = &apos;text/javascript&apos;;</div><div class="line">    script.src = url;</div><div class="line">    document.body.appendChild(script);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>行内样式</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function loadScriptString(code) &#123;</div><div class="line">    var script = document.createElement(&apos;script&apos;);</div><div class="line">    script.type = &apos;text/javascript&apos;;</div><div class="line">    try &#123;</div><div class="line">        script.appendChild(document.createTextNode(code));</div><div class="line">    &#125; catch (ex) &#123;</div><div class="line">        script.text = code ;</div><div class="line">    &#125;</div><div class="line">    document.body.appendChild(script);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="动态样式"><a href="#动态样式" class="headerlink" title="动态样式"></a>动态样式</h2><ol>
+<li>动态创建link元素</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function loadStyle(url) &#123;</div><div class="line">    var link = document.createElement(&apos;link&apos;);</div><div class="line">    link.rel = &quot;stylesheet&quot;;</div><div class="line">    link.type = &apos;text/css&apos;;</div><div class="line">    link.href = url;</div><div class="line">    var head = document.getElementsByTagName(&apos;head&apos;)[0];</div><div class="line">    head.appendChild(link);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>style元素包含</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function loadStyleString(css) &#123;</div><div class="line">    var style = document.createElement(&apos;style&apos;);</div><div class="line">    style.type = &apos;text/css&apos;;</div><div class="line">    try &#123;</div><div class="line">        style.appendChild(document.createTextNode(css));</div><div class="line">    &#125; catch(ex) &#123;</div><div class="line">        style.styleSheet.cssText = css;</div><div class="line">    &#125;</div><div class="line">    var head = document.getElementsByTagName(&apos;head&apos;)[0];</div><div class="line">    head.appenChild(style);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="操作表格"><a href="#操作表格" class="headerlink" title="操作表格"></a>操作表格</h2><p>HTMLDOM为table，tbody和tr元素添加了一些属性和方法。</p>
+<p>为table元素添加的属性和方法如下：</p>
+<ul>
+<li>caption: 保存着对caption的指针;</li>
+<li>tBodies</li>
+<li>tFoot</li>
+<li>tHead</li>
+<li>rows</li>
+<li>createTHead</li>
+<li>createTFoot</li>
+<li>createCaption</li>
+<li>deleteTHead</li>
+<li>deleteTFoot</li>
+<li>deleteCaption</li>
+<li>deleteRow</li>
+<li>insertRow</li>
+</ul>
+<p>为tbody元素添加的属性和方法如下：</p>
+<ul>
+<li>rows</li>
+<li>deleteRow</li>
+<li>insertRow</li>
+</ul>
+<p>为tr元素添加的属性和方法如下：</p>
+<ul>
+<li>cells</li>
+<li>deleteCell</li>
+<li>insertCell</li>
+</ul>
+<h2 id="使用NodeList"><a href="#使用NodeList" class="headerlink" title="使用NodeList"></a>使用NodeList</h2><p>理解NodeList及其“近亲”NameNodeMap和HTMLCollection，是从整体上透彻理解DOM的关键所在。这三个集合都是动态的；换句话说每当文档结构发生变化时，它们都会得到更新。</p>
+<h1 id="DOM扩展"><a href="#DOM扩展" class="headerlink" title="DOM扩展"></a>DOM扩展</h1><h2 id="选择符API"><a href="#选择符API" class="headerlink" title="选择符API"></a>选择符API</h2><ul>
+<li>querySelector()</li>
+<li>querySelectorAll()</li>
+</ul>
+<p>##　matchesSelector方法</p>
+<p>调入元素与传入CSS选择符匹配，则返回true</p>
+<h1 id="元素遍历"><a href="#元素遍历" class="headerlink" title="元素遍历"></a>元素遍历</h1><ul>
+<li>childElementCount</li>
+<li>firstElementChild</li>
+<li>lastElementChild</li>
+<li>previousElementSibling</li>
+<li>nextElementSibiling</li>
+</ul>
+<h1 id="HTML5"><a href="#HTML5" class="headerlink" title="HTML5"></a>HTML5</h1><ul>
+<li>getElementsByClassName()</li>
+</ul>
+<h2 id="classList"><a href="#classList" class="headerlink" title="classList"></a>classList</h2><p>classList是DOMTokenList的实例。<br>方法：</p>
+<ul>
+<li>add()</li>
+<li>contains()</li>
+<li>remove()</li>
+<li>toggle() 有就删除，没有就添加</li>
+</ul>
+<h2 id="焦点管理"><a href="#焦点管理" class="headerlink" title="焦点管理"></a>焦点管理</h2><p>HTML5添加了辅助管理DOM焦点的功能。首先是<code>document.activeElement</code><br>属性,这个属性始终会引用DOM中当前获得了焦点的元素。</p>
+<p><code>document.hasFocus()</code>方法 ，用于确定文档是否获得了焦点。</p>
+<h2 id="HTMLDocument的变化"><a href="#HTMLDocument的变化" class="headerlink" title="HTMLDocument的变化"></a>HTMLDocument的变化</h2><p>readyState 属性</p>
+<ul>
+<li>Dodument的readyState属性可能有两个值</li>
+<li>loading，正在加载文档</li>
+<li>complete，已经加载完文档</li>
+</ul>
+<p>兼容模式</p>
+<ul>
+<li>document.compatMode</li>
+<li>标准模式 “CSS1Compat”</li>
+<li>混杂模式 “BackCompat”</li>
+</ul>
+<p>head属性</p>
+<p>document.head 对head标签的引用</p>
+<h2 id="字符集属性"><a href="#字符集属性" class="headerlink" title="字符集属性"></a>字符集属性</h2><ul>
+<li>document.charset</li>
+<li>document.defaultCharset</li>
+</ul>
+<h2 id="自定义数据属性"><a href="#自定义数据属性" class="headerlink" title="自定义数据属性"></a>自定义数据属性</h2><p>使用data-开头即可</p>
+<p>添加了自定义属性之后，可以通过元素的dataset属性来访问自定义属性的值。dataset属性的值是DOMStringMap的一个实例，键值对。</p>
+<h2 id="插入标记"><a href="#插入标记" class="headerlink" title="插入标记"></a>插入标记</h2><ul>
+<li>innerHTML：返回调用元素所有子节点对应的HTML标记</li>
+<li>outerHTML：返回调用它的元素及所有子节点的HTML标签</li>
+<li>insertAdjacentHTML()：插入位置，要插入的HTML文本<ul>
+<li>beforebegin</li>
+<li>afterbegin</li>
+<li>beforeend</li>
+<li>afterend</li>
+</ul>
+</li>
+</ul>
+<h2 id="scrowIntoView-方法"><a href="#scrowIntoView-方法" class="headerlink" title="scrowIntoView()方法"></a>scrowIntoView()方法</h2><h1 id="专有扩展"><a href="#专有扩展" class="headerlink" title="专有扩展"></a>专有扩展</h1><h2 id="文档模式"><a href="#文档模式" class="headerlink" title="文档模式"></a>文档模式</h2><p>文档模式决定了可以使用什么功能。</p>
+<p>要强制浏览器以某种模式渲染页面，可以使用HTTP头部信息X-UA-Compatible，或者通过等价的<code>&lt;meta&gt;</code>标签来设置：<br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=IEVersion&quot;&gt;</code></p>
+<h2 id="children属性"><a href="#children属性" class="headerlink" title="children属性"></a>children属性</h2><p>只包含元素中同样还是元素的子节点。</p>
+<h2 id="contain-方法"><a href="#contain-方法" class="headerlink" title="contain()方法"></a>contain()方法</h2><p>测试是不是包含传入参数的后代节点，如果被检测节点是后代节点，该方法返回ture</p>
+<p>使用DOM3 的<code>compareDocumentPosition()</code> 也能够确定节点间的关系。返回一个表示该关系的位掩码。</p>
+<table>
+<thead>
+<tr>
+<th>掩码</th>
+<th>节点关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>无关（不在文档中）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>居前</td>
+</tr>
+<tr>
+<td>4</td>
+<td>居后</td>
+</tr>
+<tr>
+<td>8</td>
+<td>包含</td>
+</tr>
+<tr>
+<td>16</td>
+<td>被包含</td>
+</tr>
+</tbody>
+</table>
+<p>可以对compareDocumentPosition()的结果安位与，以确定参考节点是否包含给定的节点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var result = document.documentElement.compareDocumentPosion(document.body);</div><div class="line">console.log(!!(result &amp; 16)); // 20</div></pre></td></tr></table></figure>
+<h2 id="插入文本"><a href="#插入文本" class="headerlink" title="插入文本"></a>插入文本</h2><ul>
+<li>innerText</li>
+<li>outerText</li>
+</ul>
+<h2 id="滚动"><a href="#滚动" class="headerlink" title="滚动"></a>滚动</h2><ul>
+<li>scrollIntoViewIfNeeded(alignCenter)</li>
+<li>scrollByLines(lineCount)</li>
+<li>scrollByPages(pageCount)</li>
+</ul>
+<h1 id="DOM2和DOM3"><a href="#DOM2和DOM3" class="headerlink" title="DOM2和DOM3"></a>DOM2和DOM3</h1><h2 id="针对XML命名空间的变化"><a href="#针对XML命名空间的变化" class="headerlink" title="针对XML命名空间的变化"></a>针对XML命名空间的变化</h2><h2 id="其他方面的变化"><a href="#其他方面的变化" class="headerlink" title="其他方面的变化"></a>其他方面的变化</h2><h3 id="DocumentType类型的变化"><a href="#DocumentType类型的变化" class="headerlink" title="DocumentType类型的变化"></a>DocumentType类型的变化</h3><ul>
+<li>publicId</li>
+<li>systemId</li>
+<li>internalSubset</li>
+</ul>
+<h3 id="Document类型的变化"><a href="#Document类型的变化" class="headerlink" title="Document类型的变化"></a>Document类型的变化</h3><ul>
+<li><p>importNode() 从一个文档中取得一个节点，然后将其导入到另一个文档，使其成为这个文档结构的一部分。每个节点都有一个ownerDocument属性，表示所属文档。如果调用appendChild()时传入的节点属于不同的文档，则会抛出错误。</p>
+</li>
+<li><p>“DOM2级视图”模块添加了一个名为defaultView的属性；在IE中有一个等价的属性名叫parentWindow</p>
+</li>
+<li>createDocumentType()</li>
+<li>createDocument()</li>
+<li>createHTMLDocument()</li>
+</ul>
+<h3 id="Node类型的变化"><a href="#Node类型的变化" class="headerlink" title="Node类型的变化"></a>Node类型的变化</h3><ul>
+<li>isSupported() 与 document.implementation引入的hasFeature()方法类似。</li>
+<li>isSameNode()</li>
+<li>isEqualNode()</li>
+<li>setUserData() 添加额外数据</li>
+</ul>
+<h3 id="框架的变化"><a href="#框架的变化" class="headerlink" title="框架的变化"></a>框架的变化</h3><ul>
+<li>HTMLFrameElement</li>
+<li>HTMLIFrameElement</li>
+<li>contentDocument </li>
+</ul>
+<h1 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h1><h2 id="访问元素的样式"><a href="#访问元素的样式" class="headerlink" title="访问元素的样式"></a>访问元素的样式</h2><p>style属性-CSSStyleDeclaration实例</p>
+<p>float-&gt;cssFloat</p>
+<h3 id="DOM样式属性和方法"><a href="#DOM样式属性和方法" class="headerlink" title="DOM样式属性和方法"></a>DOM样式属性和方法</h3><ul>
+<li>cssText</li>
+<li>length</li>
+<li>parentRule</li>
+<li>getPropertyCSSValue()</li>
+<li>getPropertyPriority()</li>
+<li>getPropertyValue()</li>
+<li>item()</li>
+<li>removeProperty()</li>
+<li>setProperty()</li>
+</ul>
+<h3 id="计算的样式"><a href="#计算的样式" class="headerlink" title="计算的样式"></a>计算的样式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">document.defaultView.getComputedStyle()</div><div class="line"></div><div class="line">element.currentStyle; // IE</div></pre></td></tr></table></figure>
+<h3 id="操作样式表"><a href="#操作样式表" class="headerlink" title="操作样式表"></a>操作样式表</h3><p>CSSStyleSheet</p>
+<h3 id="元素大小"><a href="#元素大小" class="headerlink" title="元素大小"></a>元素大小</h3><p>偏移量：</p>
+<ul>
+<li>offsetHeight</li>
+<li>offsetWidth</li>
+<li>offsetLeft</li>
+<li>offsetTop</li>
+</ul>
+<p><img src="http://7xt6zr.com1.z0.glb.clouddn.com/20160518.png" alt="1"></p>
+<p>客户区大小：</p>
+<p>内容及其内边距所占据的空间大小。</p>
+<ul>
+<li>clientWidth</li>
+<li>clientHeight</li>
+</ul>
+<p><img src="http://7xt6zr.com1.z0.glb.clouddn.com/201505182.png" alt="2"></p>
+<p>滚动大小</p>
+<ul>
+<li>scrollHeight</li>
+<li>scrollWidth</li>
+<li>scrollLeft</li>
+<li>scrollTop</li>
+</ul>
+<p><img src="http://7xt6zr.com1.z0.glb.clouddn.com/201605183.png" alt="3"></p>
+<p>在确定文档的总高度时，必须取得scrollWidth/clientWidth和scrollHeight/clientHeight中的最大值，才能保证在跨浏览器的环境下得到精确的结果。</p>
+<h3 id="确定元素大小"><a href="#确定元素大小" class="headerlink" title="确定元素大小"></a>确定元素大小</h3><ul>
+<li>getBoundingClientRect()</li>
+</ul>
+<h1 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h1><ul>
+<li>NodeIterator</li>
+<li>TreeWalker</li>
+</ul>
+<h2 id="NodeIterator"><a href="#NodeIterator" class="headerlink" title="NodeIterator"></a>NodeIterator</h2><p>document.createNodeIterator() 创建NodeIterator实例。这个方法接收下列四个参数：</p>
+<ul>
+<li>root</li>
+<li>whatToShow</li>
+<li>filter</li>
+<li>entityReferenceExpansion</li>
+</ul>
+<p>whatToShow 参数是一个位掩码，通过应用一个或多个filter来确定要访问哪些节点。这个参数的值以常量形式在NodeFilter类型中定义。</p>
+<ul>
+<li>NodeFilter.SHOW_ALL</li>
+<li>NodeFilter.SHOW_ELEMENT</li>
+<li>NodeFilter.SHOW_ATTRIBUTE</li>
+<li>NodeFilter.SHOW_TEXT</li>
+<li>NodeFilter.SHOW_COMMENT</li>
+<li>NodeFilter.SHOW_DOCUMENT</li>
+<li>NodeFilter.SHOW_DOCUMENT_TYPE</li>
+<li>NodeFilter.SHOW_DOCUMENT_FARGMENT</li>
+<li>NodeFilter.SHOW_NOTATION</li>
+</ul>
+<p>NodeIterator主要两个方法：nextNode()和previousNode()。</p>
+<h2 id="TreeWalker"><a href="#TreeWalker" class="headerlink" title="TreeWalker"></a>TreeWalker</h2><ul>
+<li>parentNode()</li>
+<li>firstChild()</li>
+<li>lastChild()</li>
+<li>nextSibling()</li>
+<li>previousSibling()</li>
+</ul>
+<h1 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h1><h1 id="DOM中的范围"><a href="#DOM中的范围" class="headerlink" title="DOM中的范围"></a>DOM中的范围</h1><p>createRange()</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/lairongqin" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 Rongqin Lai<br></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

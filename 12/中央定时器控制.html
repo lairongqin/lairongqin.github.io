@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="中央定时器控制使用定时器可能出现的问题是对大批量定时器的管理，setTimeout，setInterval。这在处理动画时尤其重要，因为在视图操纵大量属性时，我们还需要一种方式来管理它们。
+管理多个定时器会出现很多问题，原因有很多。存在的问题不仅是要保留大量间隔定时器的引用，然后迟早还必须取消它们（">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Rongqin Lai">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="中央定时器控制"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Lai Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>中央定时器控制 - Lai Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Roylai</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/lairongqin">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>中央定时器控制</h1>
+                    
+                    <h2 class="post-subheading">
+                        在多个定时器中使用中央定时器控制，可以带来很大的威力和灵活性
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-05-06
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/undefined">#undefined</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="中央定时器控制"><a href="#中央定时器控制" class="headerlink" title="中央定时器控制"></a>中央定时器控制</h1><p>使用定时器可能出现的问题是对大批量定时器的管理，setTimeout，setInterval。这在处理动画时尤其重要，因为在视图操纵大量属性时，我们还需要一种方式来管理它们。</p>
+<p>管理多个定时器会出现很多问题，原因有很多。存在的问题不仅是要保留大量间隔定时器的引用，然后迟早还必须取消它们（尽管可以用闭包来管理这种混乱)，而且还干扰了浏览器的正常运行。确保定时器处理程序不执行过于冗长的操作，可以防止我们的代码阻塞其他操作，但也有一些其他浏览器已经考虑这方面了。其中之一就是垃圾回收。</p>
+<p>同事创建大量的定时器，将会在浏览器中增加垃圾回收任务发生的可能性。大致说来，垃圾回收就是浏览器遍历其分配过的内存，并视图删除没有任何应用未使用对象的过程。定时器是一个特殊的问题，因为通常它们是在JavaScript单线引擎之外的流程中进行管理的。</p>
+<p>有些浏览器可以很好地处理这种情况，但其他一些浏览器的垃圾回收周期则很长。一个动画在某个浏览器中很漂亮、很流畅，但在另外一个浏览器中却很卡顿。减少同时使用定时器的数量，将大大有助于解决这种问题，这就是为什么所有现代动画引擎都使用一种称为中央定时器控制（central timer control）的技术。</p>
+<p>在多个定时器中使用中央定时器控制，可以带来很大的威力和灵活性。</p>
+<ul>
+<li>每个页面在同一时间只需要运行一个定时器。</li>
+<li>可以根据需要暂停和恢复定时器。</li>
+<li>删除回调函数的过程变得很简单。</li>
+</ul>
+<p>让我们来看一个使用该技术来管理多个函数的例子，被管理的这些函数分别操作不同的动画属性。首先，创建一个定时器以及用于管理多个处理程序的函数，示例如下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var timers = &#123;</div><div class="line">    timerID: 0,</div><div class="line">    timers: [],</div><div class="line"></div><div class="line">    add: function (fn) &#123;</div><div class="line">        this.timers.push(fn);</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    start: function () &#123;</div><div class="line">        if (this.timerID) return;</div><div class="line">        (function runNext() &#123;</div><div class="line">            if (timers.timers.length &gt; 0) &#123;</div><div class="line">                for (var i = 0; i &lt; timers.timers.length; i++) &#123;</div><div class="line">                    if (timers.timers[i]() === false) &#123;</div><div class="line">                        timers.timers.splice(i,1);</div><div class="line">                        i--;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                timers.timerID = setTimerout(runNext,0);</div><div class="line">            &#125;</div><div class="line">        &#125;)();</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    stop:function()&#123;</div><div class="line">        clearTimeout(this.timerID);</div><div class="line">        this.timerID = 0;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>一开始，所有的回调函数都存储于一个名为timers的数组中，还包括当前定时器的一个ID。这些变量是定时器唯一需要维护的内容。</p>
+<p>add()方法接受一个callback回调，并简单将其添加到timers数组中。</p>
+<p>真正核心是start()方法。在该方法内，首先确认没有定时器在运行（通过检查timerID是否有值），如果确认没有定时器在执行，立即执行一个即使函数来开启中央定时器。</p>
+<p>在即使函数内，如果注册了处理程序，就遍历执行每个处理程序。如果有处理程序返回false，我们就从数组中将其删除，最后进行下一次调度。</p>
+<p>比如创建如下的动画操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;box&quot;&gt;hello&lt;/div&gt;</div><div class="line"></div><div class="line">var box = document.getElementById(&apos;box&apos;), x = 0, y = 20;</div><div class="line"></div><div class="line">timers.add(function () &#123;</div><div class="line">    box.style.left = x + &quot;px&quot;;</div><div class="line">    if (++x &gt; 50) return false;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">timers.add(function () &#123;</div><div class="line">    box.style.top = y + &quot;px&quot;;</div><div class="line">    y += 2;</div><div class="line">    if (y &gt; 120) return false;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">timers.start();</div></pre></td></tr></table></figure>
+<p>值得注意的是，以这种方式组织定时器，可以确保回调函数总是按照添加的顺序进行执行。而普通定时器通常不会保证这种顺序，有可能后面的一个处理程序在前面就执行了。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/lairongqin" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 Rongqin Lai<br></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

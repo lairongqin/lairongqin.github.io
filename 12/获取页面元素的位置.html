@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="用JavaScript来获取元素坐标的方法一、获取网页的大小网页上的每个元素，都有clientHeight和clientWidth属性。这两个属性指元素的内容 + Padding所占的视觉大小，不包括border和滚动条所占用的空间因此，document的clientHeight和clientWid">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Rongqin Lai">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="获取页面元素的位置"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Lai Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>获取页面元素的位置 - Lai Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Roylai</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/lairongqin">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>获取页面元素的位置</h1>
+                    
+                    <h2 class="post-subheading">
+                        转载，记录4种方法
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-01-04
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/undefined">#undefined</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="用JavaScript来获取元素坐标的方法"><a href="#用JavaScript来获取元素坐标的方法" class="headerlink" title="用JavaScript来获取元素坐标的方法"></a>用JavaScript来获取元素坐标的方法</h2><h3 id="一、获取网页的大小"><a href="#一、获取网页的大小" class="headerlink" title="一、获取网页的大小"></a>一、获取网页的大小</h3><p>网页上的每个元素，都有clientHeight和clientWidth属性。这两个属性指元素的<strong>内容 + Padding</strong>所占的视觉大小，不包括border和滚动条所占用的空间<br>因此，document的clientHeight和clientWidth属性就代表着网页的大小：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function getViewport()&#123;</div><div class="line">	//如果标准兼容模式关闭(在IE6的quirks模式中)</div><div class="line">	if(document.compatMode == &quot;BackCompat&quot;)&#123;</div><div class="line">		return &#123;</div><div class="line">			width:document.body.clientWidth,</div><div class="line">			height:document.body.clientHeight</div><div class="line">		&#125;</div><div class="line">	&#125;else</div><div class="line">	&#123;</div><div class="line">		return &#123;</div><div class="line">			width:document.documentElement.clientWidth,</div><div class="line">			height:document.documentElement.clientHeight</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="二、获取网页大小的另一种方法"><a href="#二、获取网页大小的另一种方法" class="headerlink" title="二、获取网页大小的另一种方法"></a>二、获取网页大小的另一种方法</h3><p>网页上的每个元素，还有scrollHeight和scrollWidth属性，指包含滚动条在内的该元素的视觉面积。<br>那么，document对象的scrollHeight和scrollWidth属性就是网页的大小,滚动条滚过的所有长度和宽度。<br>但是，如果网页内容能够在浏览器中完全显示，不出现滚动条，那么clientWidth和scrollWidth应该相等。但实际上，不同的浏览器有不同的处理方式，所以我们应该选取其中最大的那个值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function getViewport()</div><div class="line">&#123;</div><div class="line">	if(document.compatMode == &quot;BackCompat&quot;)</div><div class="line">	return&#123;</div><div class="line">		width:Math.max(document.body.scrollWidth,document.body.clientWidth),</div><div class="line">		height:Math.max(document.body.scrollHeight,document.body.clientHeight)</div><div class="line">	&#125;</div><div class="line">	else</div><div class="line">	&#123;</div><div class="line">		return&#123;</div><div class="line">			width:Math.max(document.documentElement.scrollWidth,document.documentElement.clientWidth),</div><div class="line">			height:Math.max(document.documentElement.scrollHeight,document.documentElement.clientHeight)</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>网页元素的绝对位置，指该元素的左上角相对于整张网页左上角的坐标。这个绝对位置要通过计算才能得到。<br>首先，每个元素都有offsetTop和offsetLeft属性，表示该元素的左上角与父容器（offsetParent对象）左上角的距离。所以，只需要将这两个值进行累加，就可以得到该元素的绝对坐标。    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">function getElementLeft(element)&#123;</div><div class="line">	var actualLeft = element.offsetLeft;</div><div class="line">	var current = element.offsetParent;</div><div class="line"></div><div class="line">	while (current != null)&#123;</div><div class="line">		actualLeft += current.offsetLeft;</div><div class="line">		current = current.offsetParent;</div><div class="line">	&#125;</div><div class="line">	return actualLeft;</div><div class="line">&#125;</div><div class="line">function getElementTop(element)&#123;</div><div class="line">	var actualTop = element.offsetTop;</div><div class="line">	var current = element.offsetParent;</div><div class="line"></div><div class="line">	while (current != null)&#123;</div><div class="line">		actualTop += current.offsetTop;</div><div class="line">		current = current.offsetParent;</div><div class="line">	&#125;</div><div class="line">	return actualTop;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="三、获取网页的相对位置"><a href="#三、获取网页的相对位置" class="headerlink" title="三、获取网页的相对位置"></a>三、获取网页的相对位置</h3><p>网页元素的相对位置，指该元素左上角相对于浏览器窗口左上角的坐标。</p>
+<p>有了绝对位置以后，获得相对位置就很容易了，只要将绝对坐标减去页面的滚动条滚动的距离就可以了。滚动条滚动的垂直距离，是document对象的scrollTop属性；滚动条滚动的水平距离是document对象的scrollLeft属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">function getElementViewLeft(element)</div><div class="line">&#123;</div><div class="line">	//获取绝对坐标</div><div class="line">	var actualLeft = element.offsetLeft;</div><div class="line">	var current = element.offsetParent;</div><div class="line">	while(current !== null)</div><div class="line">	&#123;</div><div class="line">		actualLeft += current.offsetLeft;</div><div class="line">		current = current.offsetParent;</div><div class="line">	&#125;</div><div class="line">	//获取滚动距离</div><div class="line">	if(document.compatMode == &quot;BackCompat&quot;)&#123;</div><div class="line">		var elementScrollLeft = document.body.scrollLeft;</div><div class="line">	&#125;</div><div class="line">	else</div><div class="line">	&#123;</div><div class="line">		var elementScrollLeft = document.documentElement.scrollLeft;</div><div class="line">	&#125;</div><div class="line">	return actualLeft-elementScrollLeft;</div><div class="line">&#125;</div><div class="line">function getElementViewTop(element)</div><div class="line">&#123;</div><div class="line">	var actualTop = element.offsetTop;</div><div class="line">	var current = element.offsetParent;</div><div class="line">	while(current!==null)</div><div class="line">	&#123;</div><div class="line">		actualTop += current.offsetTop;</div><div class="line">		current = current.offsetParent;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	if(document.compatMode == &quot;BackCompat&quot;)</div><div class="line">	&#123;</div><div class="line">		var elementScrollTop = document.body.scrollTop;</div><div class="line">	&#125;</div><div class="line">	else</div><div class="line">	&#123;</div><div class="line">		var elementScrollTop = document.documentElement.scrollTop;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	return actualTop - elementScrollTop;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="四、一个快速的方法"><a href="#四、一个快速的方法" class="headerlink" title="四、一个快速的方法"></a>四、一个快速的方法</h3><p>函数 <code>getBoundingClientRect()</code>返回一个对象，他包含了left，right，top，bottom四个属性，分别对应了该元素四边相对于浏览器的距离<br>所以网页元素的相对位置就是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var X = this.getBoundingClientRect().left;</div><div class="line">var Y = this.getBoundingClientRect().top;</div></pre></td></tr></table></figure>
+<p>在加上滚动距离，就可以求出绝对位置。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/lairongqin" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 Rongqin Lai<br></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

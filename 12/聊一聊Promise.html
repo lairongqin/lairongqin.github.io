@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="最近在弄PWA里面有大量的Promise，还是决定好好聊一聊这个东西，便于学习。
+Promise首先，Promise与事件监听的区别：
+
+一个Promise过程只能成功或者失败一次，不能两次，更不能在失败和成功之中互相转换。
+如果一个Promise过程已经成功或者失败，你在之后添加了成功/失败回调函">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Rongqin Lai">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="聊一聊Promise"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Lai Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>聊一聊Promise - Lai Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Roylai</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/lairongqin">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>聊一聊Promise</h1>
+                    
+                    <h2 class="post-subheading">
+                        最近在弄PWA里面有大量的Promise，还是决定好好聊一聊这个东西，便于学习。
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-05-20
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/undefined">#undefined</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>最近在弄PWA里面有大量的Promise，还是决定好好聊一聊这个东西，便于学习。</p>
+<h1 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h1><p>首先，Promise与事件监听的区别：</p>
+<ol>
+<li>一个Promise过程只能成功或者失败一次，不能两次，更不能在失败和成功之中互相转换。</li>
+<li>如果一个Promise过程已经成功或者失败，你在之后添加了成功/失败回调函数，回调函数依然会被正确调用， 即使事件反生的时间比添加事件回调函数更早。</li>
+</ol>
+<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><ul>
+<li>fulfiled/resolved ：Promise过程已经成功。</li>
+<li>rejected ：Promise过程已经失败。</li>
+<li>pending ：还没有fulfilled或者rejected。</li>
+<li>settled : 已经产生fulfilled或者rejected结果。</li>
+</ul>
+<h2 id="创建一个Promise"><a href="#创建一个Promise" class="headerlink" title="创建一个Promise"></a>创建一个Promise</h2><p>创建一个Promise非常简单:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var promise = new Promise(function (resolve, reject) &#123;</div><div class="line">  // do a thing, possibly async, then…</div><div class="line"></div><div class="line">  if (/* everything turned out fine */) &#123;</div><div class="line">    resolve(&quot;Stuff worked!&quot;);</div><div class="line">  &#125;</div><div class="line">  else &#123;</div><div class="line">    reject(Error(&quot;It broke&quot;));</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>Promise 构造器接受一个函数，函数的参数为resolve跟reject，它们是两个函数，由JS引擎提供，无需自己部署。</p>
+<p>resolve函数的作用是，在异步成功时调用，并将异步操作的结果<em>作为参数传出去</em>。</p>
+<p>reject函数的作用是，在异步操作失败时调用，并将异步操作报出的错误<em>作为参数传递出去</em>。</p>
+<p>使用方式也很简单: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">promise.then(function(result) &#123;</div><div class="line">  console.log(result); // &quot;Stuff worked!&quot;</div><div class="line">&#125;, function(err) &#123;</div><div class="line">  console.log(err); // Error: &quot;It broke&quot;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>then方法接收两个函数为参数，一个是在promise reslove的时候调用，另一个是reject的时候调用，均是可选添加。</p>
+<h2 id="用Promise实现Ajax的例子"><a href="#用Promise实现Ajax的例子" class="headerlink" title="用Promise实现Ajax的例子"></a>用Promise实现Ajax的例子</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var getJson = function (url) &#123;</div><div class="line">  return new Promise(function (resolve, reject) &#123;</div><div class="line">    var client = new XMLHttpRequest();</div><div class="line">    client.open(&quot;GET&quot;, url);</div><div class="line">    client.onreadystatechange = handler;</div><div class="line">    client.setRequestHeader(&quot;Accept&quot;, &quot;application/json&quot;);</div><div class="line">    client.responseType = &quot;json&quot;;</div><div class="line">    client.send();</div><div class="line"></div><div class="line">    function handler() &#123;</div><div class="line">      if (this.readyState !== 4) &#123;</div><div class="line">        return;</div><div class="line">      &#125;</div><div class="line">      if (this.status == 200) &#123;</div><div class="line">        resolve(this.response);</div><div class="line">      &#125; else &#123;</div><div class="line">        reject(new Error(this.statusText));</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line">getJSON(&quot;/posts.json&quot;).then(function(json) &#123;</div><div class="line">  console.log(&apos;Contents: &apos; + json);</div><div class="line">&#125;, function(error) &#123;</div><div class="line">  console.error(&apos;出错了&apos;, error);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>当一个promise操作的resolve函数参数是另一个promise值时，如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var p1 = new Promise(function (resolve, reject) &#123;</div><div class="line">  setTimeout(() =&gt; reject(new Error(&apos;fail&apos;)), 3000)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">var p2 = new Promise(function (resolve, reject) &#123;</div><div class="line">  setTimeout(() =&gt; resolve(p1), 1000)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">p2</div><div class="line">  .then(result =&gt; console.log(result))</div><div class="line">  .catch(error =&gt; console.log(error))</div><div class="line">// Error: fail</div></pre></td></tr></table></figure>
+<p>这时，p1的状态决定了P2的状态，p2会等待P1的状态来决定自己的状态。p1是reject传递到p2触发了catch函数。</p>
+<h2 id="链式异步操作"><a href="#链式异步操作" class="headerlink" title="链式异步操作"></a>链式异步操作</h2><p>当你返回了一个类似promise的操作，下一个then()方法会等到这个promise状态确定(reject/resolve)以后再进行调用。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var storyPromise;</div><div class="line"></div><div class="line">function getChapter(i) &#123;</div><div class="line">  storyPromise = storyPromise || getJSON(&apos;story.json&apos;);</div><div class="line"></div><div class="line">  return storyPromise.then(function(story) &#123;</div><div class="line">    return getJSON(story.chapterUrls[i]);</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line">// and using it is simple:</div><div class="line">getChapter(0).then(function(chapter) &#123;</div><div class="line">  console.log(chapter);</div><div class="line">  return getChapter(1);</div><div class="line">&#125;).then(function(chapter) &#123;</div><div class="line">  console.log(chapter);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h2><p>then()方法接受两个函数作为参数，第二个函数当Promise reject的时候调用，我们当然也可以使用 catch()方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">get(&apos;story.json&apos;).then(function(response) &#123;</div><div class="line">  console.log(&quot;Success!&quot;, response);</div><div class="line">&#125;, function(error) &#123;</div><div class="line">  console.log(&quot;Failed!&quot;, error);</div><div class="line">&#125;)</div><div class="line"></div><div class="line">// 等同于</div><div class="line"></div><div class="line">get(&apos;story.json&apos;).then(function(response) &#123;</div><div class="line">  console.log(&quot;Success!&quot;, response);</div><div class="line">&#125;).catch(function(error) &#123;</div><div class="line">  console.log(&quot;Failed!&quot;, error);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>有点类似与 try/catch方法</p>
+<h3 id="JS语句中的问题"><a href="#JS语句中的问题" class="headerlink" title="JS语句中的问题"></a>JS语句中的问题</h3><p>当JS语句发生错误时，Promise会变成reject并不会抛出异常。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var jsonPromise = new Promise(function(resolve, reject) &#123;</div><div class="line">  // JSON.parse throws an error if you feed it some</div><div class="line">  // invalid JSON, so this implicitly rejects:</div><div class="line">  resolve(JSON.parse(&quot;This ain&apos;t JSON&quot;));</div><div class="line">&#125;);</div><div class="line"></div><div class="line">jsonPromise.then(function(data) &#123;</div><div class="line">  // This never happens:</div><div class="line">  console.log(&quot;It worked!&quot;, data);</div><div class="line">&#125;).catch(function(err) &#123;</div><div class="line">  // Instead, this happens:</div><div class="line">  console.log(&quot;It failed!&quot;, err);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all"></a>Promise.all</h2><p>Promise.all接受一个由Promise组成的系列数组，并且当所有数组中的promise reslove了以后，创建一个成功resolved的promise.你会获得一个与你传入的Promise数组一一对应的结果数组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Promise.all(arrayOfPromises).then(function(arrayOfResults) &#123;</div><div class="line">  //...</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/lairongqin" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 Rongqin Lai<br></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
